@@ -120,6 +120,15 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-15" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="560" width="400" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-13" target="pS8aBBDgbc2Ip04H-5cS-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-13" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="680" width="320" height="410" as="geometry" />
+        </mxCell>
         <mxCell id="CE6jNNIGH61miV8GDFaL-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CE6jNNIGH61miV8GDFaL-1" target="CE6jNNIGH61miV8GDFaL-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -169,11 +178,14 @@
         <mxCell id="CE6jNNIGH61miV8GDFaL-11" value="获取propertyList：将字段名 field，和 单元格类型 cellType 构造为一个对象 PropertyNameType，并加入&amp;nbsp;propertyNameTypeList 中" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="380" y="530" width="205" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="pS8aBBDgbc2Ip04H-5cS-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-1" target="pS8aBBDgbc2Ip04H-5cS-7">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-8" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-1" target="pS8aBBDgbc2Ip04H-5cS-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="650" as="sourcePoint" />
+            <mxPoint x="950" y="670" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="pS8aBBDgbc2Ip04H-5cS-1" value="遍历查询的结果集 resultList" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="892.5" y="580" width="120" height="60" as="geometry" />
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-1" value="获取其中一条记录" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="580" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-3" value="获取 excelExportFieldMap 的value：Field&lt;div&gt;将Field存入List中，得到 fieldList&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="640" y="369" width="160" height="80" as="geometry" />
@@ -181,7 +193,7 @@
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-7" target="pS8aBBDgbc2Ip04H-5cS-9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="pS8aBBDgbc2Ip04H-5cS-7" value="遍历 fieldList ，取出查询结果的字段值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-7" value="取出查询结果的字段值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="892.5" y="720" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-9" target="pS8aBBDgbc2Ip04H-5cS-11">
@@ -190,8 +202,17 @@
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-9" value="序列化处理字段值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="892.5" y="860" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="pS8aBBDgbc2Ip04H-5cS-11" value="以&amp;lt;fieldName, object&amp;gt; 的方式存入 objectMap 中" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="892.5" y="1000" width="120" height="60" as="geometry" />
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-11" value="以&lt;div&gt;&amp;lt;fieldName, object&amp;gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;的方式存入 objectMap 中&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="883.75" y="1000" width="137.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-14" value="遍历 fieldList&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="740" y="680" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-16" value="遍历查询的结果集 resultList" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-17" value="将 objectMap 存入 list 中" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1160" width="150" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
