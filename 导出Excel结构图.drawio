@@ -135,8 +135,11 @@
         <mxCell id="CE6jNNIGH61miV8GDFaL-2" value="根据sceneParam过滤 @ExcelExport.scene&lt;br&gt;组成&amp;lt;@ExcelExport, Field&amp;gt;的Map，并按照@ExcelExport.order排序：&lt;br&gt;excelExportFieldMap" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="230" y="226" width="310" height="66" as="geometry" />
         </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-4" target="pS8aBBDgbc2Ip04H-5cS-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="CE6jNNIGH61miV8GDFaL-4" value="根据&amp;lt;@ExcelExport, Field&amp;gt;&lt;br&gt;创建BiMap &amp;lt;Field,@ExcelExport&amp;gt;：&lt;span style=&quot;font-size: 9.8pt; background-color: rgb(255, 255, 255); color: rgb(8, 8, 8);&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;excelExportFieldBiMap&lt;/font&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="660" y="229" width="245" height="60" as="geometry" />
+          <mxGeometry x="830" y="229" width="245" height="60" as="geometry" />
         </mxCell>
         <mxCell id="CE6jNNIGH61miV8GDFaL-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="CE6jNNIGH61miV8GDFaL-6" target="CE6jNNIGH61miV8GDFaL-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -155,6 +158,9 @@
         </mxCell>
         <mxCell id="CE6jNNIGH61miV8GDFaL-11" value="获取propertyList：将字段名 field，和 单元格类型 cellType 构造为一个对象 PropertyNameType，并加入&amp;nbsp;propertyNameTypeList 中" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="465" y="520" width="205" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-1" value="" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="892.5" y="369" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
