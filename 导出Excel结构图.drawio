@@ -1,0 +1,162 @@
+<mxfile host="Electron" modified="2024-12-28T17:00:57.532Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.11 Chrome/114.0.5735.289 Electron/25.9.8 Safari/537.36" etag="4Yx0uPjqcPOAUxi5K3oR" version="22.1.11" type="device" pages="2">
+  <diagram name="scene过滤结构图" id="WItJWQn6W-Jd74RlE4Po">
+    <mxGraphModel dx="1418" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-15" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="121" y="149" width="800" height="515" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-10" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="231" y="259" width="670" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-12" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;glass=0;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="371" y="379" width="450" height="235" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="571" y="259" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-1" value="获取类中所有&lt;br&gt;&amp;nbsp;@ExcelExport &lt;br&gt;的字段" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="501" y="169" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="571" y="379" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;dashed=1;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="149" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="691" y="309" />
+              <mxPoint x="691" y="129" />
+              <mxPoint x="660" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-25" value="遍历结束后" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="u0nEYxH0dhHkYBqJhdoD-22" vertex="1" connectable="0">
+          <mxGeometry x="0.2342" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="106" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-2" value="获取每个字段的所有&lt;br&gt;@ExcelExport&lt;br&gt;注解的 scene 数组" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="511" y="279" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-3" target="u0nEYxH0dhHkYBqJhdoD-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-3" value="获取每个&lt;br&gt;&amp;nbsp;scene 数组&lt;br&gt;中的元素" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="511" y="414" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-6" target="u0nEYxH0dhHkYBqJhdoD-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="611" y="579" as="sourcePoint" />
+            <mxPoint x="661" y="579" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-6" target="u0nEYxH0dhHkYBqJhdoD-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="471" y="544" />
+              <mxPoint x="471" y="444" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650.97" y="456.48" as="sourcePoint" />
+            <mxPoint x="731" y="259" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="761" y="444" />
+              <mxPoint x="761" y="239" />
+              <mxPoint x="731" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-24" value="遍历结束后" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="u0nEYxH0dhHkYBqJhdoD-20" vertex="1" connectable="0">
+          <mxGeometry x="-0.119" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-6" value="比较 sceneParam &lt;br&gt;与 scene 是否一致" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="511" y="504" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="u0nEYxH0dhHkYBqJhdoD-8" target="u0nEYxH0dhHkYBqJhdoD-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="756" y="544" as="sourcePoint" />
+            <mxPoint x="641" y="119" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="851" y="544" />
+              <mxPoint x="851" y="129" />
+              <mxPoint x="721" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-8" value="缓存该&lt;br&gt;@ExcelExport&lt;br&gt;注解" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="701" y="504" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-11" value="遍历单个字段所有@ExcelExport&lt;br&gt;注解" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;horizontal=1;" parent="1" vertex="1">
+          <mxGeometry x="231" y="259" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-13" value="遍历每个@ExcelExport&lt;br&gt;注解的&lt;br&gt;scene 数组中的元素" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;horizontal=1;" parent="1" vertex="1">
+          <mxGeometry x="371" y="379" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-16" value="一致" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="631" y="544" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-19" value="不一致" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="451" y="544" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u0nEYxH0dhHkYBqJhdoD-21" value="遍历所有包含@ExcelExport&lt;br&gt;的字段" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;horizontal=1;" parent="1" vertex="1">
+          <mxGeometry x="121" y="149" width="100" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="6i2XfKfdZBkIBOqlwllx" name="第 2 页">
+    <mxGraphModel dx="1418" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CE6jNNIGH61miV8GDFaL-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-1" target="CE6jNNIGH61miV8GDFaL-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-1" value="获取所有@ExcelExport&lt;br&gt;字段" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-2" target="CE6jNNIGH61miV8GDFaL-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-2" target="CE6jNNIGH61miV8GDFaL-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-2" value="根据sceneParam过滤 @ExcelExport.scene&lt;br&gt;组成&amp;lt;@ExcelExport, Field&amp;gt;的Map，并按照@ExcelExport.order排序：&lt;br&gt;excelExportFieldMap" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="226" width="310" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-4" value="根据&amp;lt;@ExcelExport, Field&amp;gt;&lt;br&gt;创建BiMap &amp;lt;Field,@ExcelExport&amp;gt;：&lt;span style=&quot;font-size: 9.8pt; background-color: rgb(255, 255, 255); color: rgb(8, 8, 8);&quot;&gt;&lt;font face=&quot;Helvetica&quot;&gt;excelExportFieldBiMap&lt;/font&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="229" width="245" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-6" target="CE6jNNIGH61miV8GDFaL-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-6" target="CE6jNNIGH61miV8GDFaL-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CE6jNNIGH61miV8GDFaL-6" target="CE6jNNIGH61miV8GDFaL-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-6" value="获取 excelExportFieldMap 的key：@ExcelExport" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="302.5" y="380" width="165" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-8" value="获取titleList&amp;nbsp;&lt;br&gt;将 @ExcelExport.title 添加到 list 中" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="520" width="135" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CE6jNNIGH61miV8GDFaL-11" value="获取propertyList：将字段名 field，和 单元格类型 cellType 构造为一个对象 PropertyNameType，并加入 list 中" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="520" width="205" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

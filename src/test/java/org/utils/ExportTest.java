@@ -1,11 +1,9 @@
-package org.utils.test;
+package org.utils;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.utils.ExcelUtils;
 import org.utils.extra.WorkbookHandler;
 import org.utils.test.configuration.ExcelToolsConfiguration;
 import org.utils.test.vo.SampleVO;
@@ -15,7 +13,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 /**
  * @author Jackson
@@ -27,14 +24,20 @@ public class ExportTest {
 
     @Test
     public void test() throws IOException {
+        // 导出测试
         List<SampleVO> sampleVOList = getSampleVOList();
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(ExcelToolsConfiguration.class);
         context.scan("org.utils");
         context.refresh();
-        Workbook workbook = new XSSFWorkbook();
-        ExcelUtils.exportSheet(workbook, sampleVOList, SampleVO.class, "测试");
-        WorkbookHandler.saveExcelToFile(workbook, "test.xlsx");
+        Workbook exportWorkbook = new XSSFWorkbook();
+        ExcelExportUtils.exportSheet(exportWorkbook, sampleVOList, SampleVO.class, "测试");
+        String filePath = WorkbookHandler.saveExcelToFile(exportWorkbook, "test.xlsx");
+
+        // 导入测试
+        Workbook importWorkbook = ExcelImportUtils.determineWorkbook(new File(filePath));
+        ExcelImportUtils.getObjectListFromExcel(importWorkbook, SampleVO.class);
+
         context.close();
 
 
@@ -43,11 +46,19 @@ public class ExportTest {
     private List<SampleVO> getSampleVOList() {
         List<SampleVO> sampleVOList = new ArrayList<>();
 
-        SampleVO.SampleVOBuilder test1 = SampleVO.builder().sampleString("test1").sampleDouble(1.1).sampleDate(LocalDateTime.now()).sampleBoolean(true);
-        sampleVOList.add(test1.build());
+        SampleVO test1 = new SampleVO();
+        test1.setSampleString("test1");
+        test1.setSampleDouble(1.1);
+        test1.setSampleDate(LocalDateTime.now());
+        test1.setSampleBoolean(true);
+        sampleVOList.add(test1);
 
-        SampleVO.SampleVOBuilder test2 = SampleVO.builder().sampleString("test2").sampleDouble(2.2).sampleDate(LocalDateTime.now().minusDays(1)).sampleBoolean(false);
-        sampleVOList.add(test2.build());
+        SampleVO test2 = new SampleVO();
+        test2.setSampleString("test2");
+        test2.setSampleDouble(2.2);
+        test2.setSampleDate(LocalDateTime.now().minusDays(1));
+        test2.setSampleBoolean(false);
+        sampleVOList.add(test2);
 
         return sampleVOList;
 

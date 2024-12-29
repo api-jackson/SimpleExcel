@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class WorkbookHandler {
 
-    public static void saveExcelToFile(Workbook workbook, String filename) throws IOException {
+    public static String saveExcelToFile(Workbook workbook, String filename) throws IOException {
         int surfixIndex = filename.lastIndexOf(".");
         String dateString = DateTimeUtils.date2String(new Date(), DateTimeUtils.PATTERN_DATETIME_MINI);
         String nowFilename = new String(filename.substring(0, surfixIndex) + "_" + dateString + "." + filename.substring(surfixIndex + 1));
@@ -26,6 +26,7 @@ public class WorkbookHandler {
         } catch (Exception e) {
             throw e;
         }
+        return file.getAbsolutePath();
     }
 
 }
