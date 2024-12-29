@@ -184,8 +184,14 @@
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-7" value="遍历 fieldList ，取出查询结果的字段值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="892.5" y="720" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pS8aBBDgbc2Ip04H-5cS-9" target="pS8aBBDgbc2Ip04H-5cS-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="pS8aBBDgbc2Ip04H-5cS-9" value="序列化处理字段值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="892.5" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pS8aBBDgbc2Ip04H-5cS-11" value="以&amp;lt;fieldName, object&amp;gt; 的方式存入 objectMap 中" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="892.5" y="1000" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
