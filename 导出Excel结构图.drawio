@@ -304,17 +304,56 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-17" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="370" width="410" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CEC2OrdyisC9IkQ4qWNB-8" target="CEC2OrdyisC9IkQ4qWNB-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-8" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="500" width="290" height="530" as="geometry" />
+        </mxCell>
         <mxCell id="AGyn3RWQ5U0WP62knY6c-1" value="获取所有@ExcelImport&lt;br&gt;字段" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="325" y="70" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="CEC2OrdyisC9IkQ4qWNB-1" value="根据sceneParam过滤 @ExcelImport.scene&lt;br&gt;组成&amp;lt;@ExcelImport, Field&amp;gt;的Map，并按照@ExcelImport.order排序：&lt;br&gt;excelImportFieldMap" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="230" y="226" width="310" height="66" as="geometry" />
         </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CEC2OrdyisC9IkQ4qWNB-2" target="CEC2OrdyisC9IkQ4qWNB-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="CEC2OrdyisC9IkQ4qWNB-2" value="获取 Excel 的一行" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="280" y="400" width="120" height="60" as="geometry" />
+          <mxGeometry x="225" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CEC2OrdyisC9IkQ4qWNB-3" target="CEC2OrdyisC9IkQ4qWNB-4">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="CEC2OrdyisC9IkQ4qWNB-3" value="获取 Excel 的一列" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="280" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CEC2OrdyisC9IkQ4qWNB-4" target="CEC2OrdyisC9IkQ4qWNB-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-4" value="根据Excel单元格的类型 cellType，取出单元格的值" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CEC2OrdyisC9IkQ4qWNB-6" target="CEC2OrdyisC9IkQ4qWNB-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-6" value="根据字段的类型，将单元格的值转为字段的类型" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-9" value="遍历Excel的所有行" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="370" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-11" value="将转换后的值存入&amp;lt;fieldName, value&amp;gt;的Map 中" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-15" value="将一行的&amp;nbsp;excelValueMap 存入&amp;nbsp;objectMapList" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="1109" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CEC2OrdyisC9IkQ4qWNB-18" value="遍历一行中的所有列" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="500" width="110" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
