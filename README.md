@@ -18,7 +18,7 @@
 
   - `title(String)`: String，生成 Excel 表格的标题
 
-  - `cellType(CellType)`: CellType枚举类，该列数据填充的数据类型，当前有 _NONE，BLANK，BOOLEAN（常用），ERROR，FORMULA，NUMERIC（常用），STRING（常用，日期等）
+  - `cellType(CellType)`: CellType枚举类(`org.apache.poi.ss.usermodel`)，该列数据填充的数据类型，当前有 _NONE，BLANK，BOOLEAN（常用），ERROR，FORMULA，NUMERIC（常用），STRING（常用，日期等）
 
   - `order(int)`: int，该字段导出列的排序
 
