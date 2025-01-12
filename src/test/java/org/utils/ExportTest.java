@@ -36,7 +36,8 @@ public class ExportTest {
 
         // 导入测试
         Workbook importWorkbook = ExcelImportUtils.determineWorkbook(new File(filePath));
-        ExcelImportUtils.getObjectListFromExcel(importWorkbook, SampleVO.class);
+        List<SampleVO> importVOList = ExcelImportUtils.getObjectListFromExcel(importWorkbook, SampleVO.class);
+        
 
         context.close();
 
