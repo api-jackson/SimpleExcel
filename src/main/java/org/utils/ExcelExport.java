@@ -28,5 +28,7 @@ public @interface ExcelExport {
 
     Class serializeBeanClass() default void.class;
 
+    String dateFormat() default "";
+
 
 }

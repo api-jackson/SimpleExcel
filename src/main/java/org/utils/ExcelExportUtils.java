@@ -131,7 +131,7 @@ public class ExcelExportUtils {
 
     private static Object processBySerialize(Object object, ExcelExport excelExport) {
 
-        object = handleDateFormatter(object);
+        object = handleDateFormatter(object, excelExport);
 
         final boolean emptyBeanName = StringUtils.isBlank(excelExport.serializeBeanName());
         final boolean emptyBeanClass = excelExport.serializeBeanName() == null || excelExport.serializeBeanClass().equals(void.class);
@@ -200,19 +200,19 @@ public class ExcelExportUtils {
     }
 
 
-    private static Object handleDateFormatter(Object object) {
+    private static Object handleDateFormatter(Object object, ExcelExport excelExport) {
         if (object instanceof Date) {
             Date date = (Date) object;
-            return DateFormatUtils.format(date, "yyyy-MM-dd HH:mm:ss");
+            return DateFormatUtils.format(date, StringUtils.defaultIfEmpty(excelExport.dateFormat(), "yyyy-MM-dd HH:mm:ss"));
         } else if (object instanceof LocalDateTime) {
             LocalDateTime localDateTime = (LocalDateTime) object;
-            return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(localDateTime);
+            return DateTimeFormatter.ofPattern(StringUtils.defaultIfEmpty(excelExport.dateFormat(), "yyyy-MM-dd HH:mm:ss")).format(localDateTime);
         } else if (object instanceof LocalDate) {
             LocalDate localDate = (LocalDate) object;
-            return DateTimeFormatter.ofPattern("yyyy-MM-dd").format(localDate);
+            return DateTimeFormatter.ofPattern(StringUtils.defaultIfEmpty(excelExport.dateFormat(), "yyyy-MM-dd")).format(localDate);
         } else if (object instanceof LocalTime) {
             LocalTime localTime = (LocalTime) object;
-            return DateTimeFormatter.ofPattern("HH:mm:ss").format(localTime);
+            return DateTimeFormatter.ofPattern(StringUtils.defaultIfEmpty(excelExport.dateFormat(), "HH:mm:ss")).format(localTime);
         } else {
             return object;
         }
