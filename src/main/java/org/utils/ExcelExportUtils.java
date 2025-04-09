@@ -24,6 +24,11 @@ public class ExcelExportUtils {
 
     /******************** 导出处理方法  start ********************/
 
+    /**
+     * 构建导出Excel标题行
+     * @param row
+     * @param titleList
+     */
     private static void buildTitle(Row row, List<String> titleList) {
         for (int i=0; i<titleList.size(); i++) {
             String title = titleList.get(i);
@@ -32,6 +37,14 @@ public class ExcelExportUtils {
         }
     }
 
+    /**
+     * 构建导出Excel数据
+     * @param propertyTypeMapList
+     * @param exportObjectMapList
+     * @param titleList
+     * @param workbook
+     * @param sheetName
+     */
     private static void getExcelBytes(List<PropertyNameType> propertyTypeMapList, List<Map<String, Object>> exportObjectMapList,
                                       List<String> titleList, Workbook workbook, String sheetName) {
         Sheet sheet = workbook.createSheet(sheetName);
@@ -90,6 +103,15 @@ public class ExcelExportUtils {
 //        response.flushBuffer();
 //    }
 
+    /**
+     * 生成标题行titleList，Excel属性propertyList，数据对象objectList
+     * @param queryList
+     * @param klass
+     * @param scene
+     * @return
+     * @param <T>
+     * @throws IllegalAccessException
+     */
     private static <T> Map<String, List> generateExportList(List<T> queryList, Class<T> klass, String scene) throws IllegalAccessException {
         List<Field> exportFieldList = FieldUtils.getFieldsListWithAnnotation(klass, ExcelExport.class);
         Map<ExcelExport, Field> excelExportFieldMap = filterScene(exportFieldList, scene);
@@ -97,17 +119,11 @@ public class ExcelExportUtils {
         Set<Map.Entry<ExcelExport, Field>> excelExportSet = excelExportFieldMap.entrySet();
 
         List<String> titleList = new ArrayList<>();
-        List<PropertyNameType> propertyNameTypeList = new ArrayList<>();
         List<Map<String, Object>> exportList = new ArrayList<>();
         List<Field> fieldList = new ArrayList<>();
+        List<PropertyNameType> propertyNameTypeList = new ArrayList<>();
 
-        for (Map.Entry<ExcelExport, Field> entry : excelExportSet) {
-            ExcelExport excelExport = entry.getKey();
-            Field field = entry.getValue();
-            fieldList.add(field);
-            titleList.add(excelExport.title());
-            propertyNameTypeList.add(new PropertyNameType(field.getName(), excelExport.cellType()));
-        }
+        buildPropertyTypeAndTitleList(excelExportSet, fieldList, titleList, propertyNameTypeList);
 
 
         for (T t : queryList) {
@@ -129,7 +145,27 @@ public class ExcelExportUtils {
 
     }
 
-    private static Object processBySerialize(Object object, ExcelExport excelExport) {
+    private static List<PropertyNameType> buildPropertyTypeAndTitleList(Set<Map.Entry<ExcelExport, Field>> excelExportSet, List<Field> fieldList,
+                                                                  List<String> titleList, List<PropertyNameType> propertyNameTypeList) {
+
+        for (Map.Entry<ExcelExport, Field> entry : excelExportSet) {
+            ExcelExport excelExport = entry.getKey();
+            Field field = entry.getValue();
+            fieldList.add(field);
+            titleList.add(excelExport.title());
+            propertyNameTypeList.add(new PropertyNameType(field.getName(), excelExport.cellType()));
+        }
+        return propertyNameTypeList;
+    }
+
+
+    /**
+     * 处理每个对象导出到Excel cell的内容
+     * @param object
+     * @param excelExport
+     * @return
+     */
+    public static Object processBySerialize(Object object, ExcelExport excelExport) {
 
         object = handleDateFormatter(object, excelExport);
 
@@ -145,16 +181,36 @@ public class ExcelExportUtils {
         }
     }
 
+    /**
+     * 根据beanName获取序列化bean对象
+     * @param object
+     * @param excelExport
+     * @return
+     */
     private static Object processBySerializeBeanName(Object object, ExcelExport excelExport) {
         final AbstractExcelSerialize serializeBean = (AbstractExcelSerialize) SpringBeanUtils.getBean(excelExport.serializeBeanName());
         return serializeBean.getExcelObject(object);
     }
 
+
+    /**
+     * 根据beanClass获取序列化bean对象
+     * @param object
+     * @param excelExport
+     * @return
+     */
     private static Object processBySerializeBeanClass(Object object, ExcelExport excelExport) {
         final AbstractExcelSerialize serializeBean = (AbstractExcelSerialize) SpringBeanUtils.getBean(excelExport.serializeBeanClass());
         return serializeBean.getExcelObject(object);
     }
 
+
+    /**
+     * 过滤出指定场景的ExcelExport注解
+     * @param fieldList
+     * @param sceneParam
+     * @return
+     */
     private static Map<ExcelExport, Field> filterScene(List<Field> fieldList, String sceneParam) {
         Map<ExcelExport, Field> sceneFieldMap = new TreeMap<>(new Comparator<ExcelExport>() {
             @Override
@@ -179,6 +235,12 @@ public class ExcelExportUtils {
     }
 
 
+    /**
+     * 取出各种list，进行导出处理
+     * @param exportListMap
+     * @param workbook
+     * @param sheetName
+     */
     private static void processExcelSheetByListMap(Map<String, List> exportListMap, Workbook workbook, String sheetName) {
         List<String> titleList = exportListMap.get("titleList");
         List<PropertyNameType> propertyNameTypeList = exportListMap.get("propertyList");
@@ -195,11 +257,24 @@ public class ExcelExportUtils {
         }
     }
 
+    /**
+     * 导出sheet
+     * @param workbook
+     * @param dataList
+     * @param klass
+     * @param sheetName
+     * @param <T>
+     */
     public static <T> void exportSheet(Workbook workbook, List<T> dataList, Class<T> klass, String sheetName) {
         exportSheet(workbook, dataList, klass, sheetName, "");
     }
 
-
+    /**
+     * 处理时间格式
+     * @param object
+     * @param excelExport
+     * @return
+     */
     private static Object handleDateFormatter(Object object, ExcelExport excelExport) {
         if (object instanceof Date) {
             Date date = (Date) object;
@@ -219,6 +294,8 @@ public class ExcelExportUtils {
     }
 
     /******************** 导出处理方法  end ********************/
+
+
 
 
 }
